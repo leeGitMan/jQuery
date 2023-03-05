@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+    crossorigin="anonymous"></script>
+
+
+    <style>
+        .area{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .area1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .div2{
+            display: inline-block;
+        }
+
+        .inputColor{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100px;
+        }
+
+
+        .box{
+            display: inline-block;
+        }
+        
+        .box > div{
+            transition-duration: 1s;
+        }
+    </style>
+
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <div class=area1></div>
+        <input type="text" class="inputColor">
+        <button id="btn1">변경하기</button>
+    </div>
+
+    <hr><hr>
+    
+    <script>
+        $("#btn1").on("click", () =>{
+            $(".area1").css("backgroundColor", $(".inputColor").val());
+        });
+    </script>
+
+    
+
+        function() => {}
+
+
+
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div class="area div2"></div>
+    <div>
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+        <input type="text" class="inputColor input2">
+    </div>
+
+    <button type="button" id="btn2">색변경</button>
+
+
+    
+
+
+
+    <script>
+        // 버튼 요소 가져와서 클릭 함수 걸기
+        $("#btn2").on("click", () =>{
+            // 박스 요소를 클래스를 이용하여 배열에 담기
+            const boxArr = $(".div2");
+            // 인풋 요소들도 배열에 담기
+            const inputArr = $(".input2");
+
+            // for문을 이용해서 각각의 인덱스의 박스 요소에 인풋 값 적용 시키기
+            for(let i = 0; i < boxArr.length; i++){
+                $(boxArr[i]).css("backgroundColor", $(inputArr[i]).val());
+            }
+        });
+    </script>
+
+
+
+    <hr><hr><hr>
+
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+
+    <div class="box">
+        <div class="area div3"></div>
+        <input type="text" class="inputColor input3">
+    </div>
+
+
+
+    <script>
+
+        const divArr = $(".div3");
+        const inputColor = $(".input3");
+
+
+        $(inputColor).on("input", () =>{
+            for(let i = 0; i < divArr.length; i++){
+            $(divArr[i]).css("backgroundColor", $(inputColor[i]).val());
+            }
+        })
+    </script>
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+</body>
+</html>
